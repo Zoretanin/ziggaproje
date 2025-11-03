@@ -7,7 +7,7 @@ public class ziggaSC : MonoBehaviour
     public float jumpForce;
     public LogicManager logic;
     public bool isAlive = true;
-    public float deadZoneY = -8;
+    public float deadZoneY = -7;
     
     void Start()
     {
