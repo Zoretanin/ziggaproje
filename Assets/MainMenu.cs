@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     // Music Toggle butonuna basýnca
     public void ToggleMusic()
     {
-        MusicToggle mc = FindObjectOfType<MusicToggle>();
+        MusicToggle mc = Object.FindFirstObjectByType<MusicToggle>();
         if (mc != null)
         {
             mc.ToggleMusic();
