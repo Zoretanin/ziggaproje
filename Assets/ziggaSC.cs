@@ -1,5 +1,7 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ziggaSC : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class ziggaSC : MonoBehaviour
     public LogicManager logic;
     public bool isAlive = true;
     public float deadZoneY = -7;
+    private int coinCounter = 0;
+    public Text counterText;
     
     void Start()
     {
@@ -29,17 +33,29 @@ public class ziggaSC : MonoBehaviour
         }
 
 
-    }   
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-      
-      logic.gameOver();
-      isAlive = false;
-
+        if (collision.gameObject.CompareTag("pipe"))
+        {
+           logic.gameOver();
+           isAlive = false;
+        }
+   
     }
-
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("coin"))
+        {
+            collision.gameObject.SetActive(false);
+            coinCounter += 1;
+            counterText.text = "Coins:" + coinCounter;
+        }
+        
+        
+    }
+          
 
 
 
