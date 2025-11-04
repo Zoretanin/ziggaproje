@@ -1182,7 +1182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568227aeb8a2e9640a537d5da4690bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pipe: {fileID: 3831096650643992424, guid: 9a72910ad34cf4a48b4d61b16600b8e5, type: 3}
+  pipePrefabs:
+  - {fileID: 3515002799662887473, guid: 3b24f5fb838e2334fa3593e10cabb59a, type: 3}
+  - {fileID: 194928365056598619, guid: eb9eb18c9020c2e44b38738b34560207, type: 3}
+  - {fileID: 1222754773554605661, guid: 7fec458669d037d46b3a251560fba83b, type: 3}
   spawnRate: 2
   heightOffset: 2
 --- !u!1 &802395879
@@ -1625,6 +1628,7 @@ MonoBehaviour:
   logic: {fileID: 0}
   isAlive: 1
   deadZoneY: -10
+  counterText: {fileID: 0}
 --- !u!58 &991268209
 CircleCollider2D:
   m_ObjectHideFlags: 0

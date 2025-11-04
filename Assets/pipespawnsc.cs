@@ -1,38 +1,43 @@
-using System.Threading;
+﻿using System.Threading;
 using UnityEngine;
 
-public class pipespawnsc : MonoBehaviour
+public class PipeSpawner : MonoBehaviour
 {
+    public GameObject[] pipePrefabs;   // ✅ Birden fazla prefab tutmak için dizi
+    public float spawnRate = 2f;
+    private float timer = 0f;
+    public float heightOffset = 10f;
 
-    public GameObject pipe;
-    public float spawnRate = 2;
-    private float timer = 0;
-    public float heightOffset = 10;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-     
+        SpawnPipe();
     }
 
-    // Update is called once per frame
     void Update()
     {
-      if (timer < spawnRate)
-      {
-        timer = timer + Time.deltaTime;
-      }
-      else
-      {
-        SpawnPipe();
-        timer = 0;
-      }
-      
+        timer += Time.deltaTime;
+
+        if (timer >= spawnRate)
+        {
+            SpawnPipe();
+            timer = 0f;
+        }
     }
+
     void SpawnPipe()
     {
         float lowestPoint = transform.position.y - heightOffset;
         float highestPoint = transform.position.y + heightOffset;
 
-        Instantiate(pipe, new Vector3(transform.position.x,Random.Range(lowestPoint,highestPoint),0), transform.rotation);
+        // ✅ Rastgele prefab seç
+        int randomIndex = Random.Range(0, pipePrefabs.Length);
+        GameObject selectedPipe = pipePrefabs[randomIndex];
+
+        // ✅ Rastgele yükseklikte spawn et
+        Instantiate(
+            selectedPipe,
+            new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0),
+            transform.rotation
+        );
     }
 }
