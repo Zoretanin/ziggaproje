@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0cdd07e52f263304b830bdd0043225b7
+guid: ec967835d1665f74385146641cb392fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8957324059118975939
-    second: images_0
+      213: 4645790192023596674
+    second: anotherworld3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: images_0
+      name: anotherworld3_0
       rect:
         serializedVersion: 2
-        x: 88
+        x: 0
         y: 0
-        width: 88
-        height: 163
-      alignment: 9
-      pivot: {x: 0.50000006, y: 0.4975112}
-      border: {x: 0, y: 0, z: 44, w: 52}
+        width: 1920
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3cbb8d916cece4c70800000000000000
-      internalID: 8957324059118975939
+      spriteID: 28e6f80b099297040800000000000000
+      internalID: 4645790192023596674
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1e6cbb587bd666a47a0c34ba7c1b4d57
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      images_0: 8957324059118975939
+      anotherworld3_0: 4645790192023596674
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
