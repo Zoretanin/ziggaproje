@@ -9,7 +9,6 @@ public class MusicToggle : MonoBehaviour
 
     void Awake()
     {
-        // Singleton: sahneler arasý müzik devam etsin
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -19,21 +18,20 @@ public class MusicToggle : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Kaydedilmiþ müzik durumunu oku
+      
         bool enabled = PlayerPrefs.GetInt(MUSIC_PREF, 1) == 1;
 
         if (enabled)
             musicSource.Play();
         else
-            musicSource.Pause();
+            musicSource.Stop(); 
     }
 
-    // Music toggle
     public void ToggleMusic()
     {
         if (musicSource.isPlaying)
         {
-            musicSource.Pause();
+            musicSource.Stop();
             PlayerPrefs.SetInt(MUSIC_PREF, 0);
         }
         else

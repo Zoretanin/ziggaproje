@@ -7,7 +7,7 @@ public class PauseManager : MonoBehaviour
     private bool isPaused = false;
 
     public GameObject pausePanel;
-    public Text musicStatusText; // Pause menüsünde "Music: ON/OFF" yazýsý
+    public Text musicStatusText; 
 
     void Start()
     {
@@ -33,7 +33,6 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    //  Oyun içindeki music butonu
     public void ToggleMusicInGame()
     {
         MusicToggle mc = Object.FindAnyObjectByType<MusicToggle>();

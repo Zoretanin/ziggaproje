@@ -4,20 +4,20 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public Text musicStatusText; // Music durumu gösterecek UI Text
+    public Text musicStatusText;
+    public Text totalCoinsText; 
 
     void Start()
     {
         UpdateMusicText();
+        UpdateTotalCoins(); 
     }
 
-    // Start Game butonuna basýnca
     public void StartGame()
     {
-        SceneManager.LoadScene(1); // Build Settings'de GameScene index 1
+        SceneManager.LoadScene(1);
     }
 
-    // Music Toggle butonuna basýnca
     public void ToggleMusic()
     {
         MusicToggle mc = Object.FindFirstObjectByType<MusicToggle>();
@@ -28,15 +28,20 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    // Music butonunun yanýndaki texti güncelle
     void UpdateMusicText()
     {
         bool enabled = PlayerPrefs.GetInt("MusicEnabled", 1) == 1;
         if (musicStatusText != null)
-            musicStatusText.text = enabled ? "Music: ON" : "Music: OFF";
+            musicStatusText.text = enabled ? "ON" : "OFF";
     }
 
-    // Quit butonuna basýnca
+    void UpdateTotalCoins()
+    {
+        int coins = PlayerPrefs.GetInt("TotalCoins", 0);
+        if (totalCoinsText != null)
+            totalCoinsText.text = ":" + coins;
+    }
+
     public void QuitGame()
     {
         Application.Quit();
