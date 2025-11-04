@@ -50,7 +50,7 @@ public class ziggaSC : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             coinCounter += 1;
-            counterText.text = "Coins: " + coinCounter;
+            counterText.text = "Coins This Run: " + coinCounter;
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins", 0) + 1);
         }
     }

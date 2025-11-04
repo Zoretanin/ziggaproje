@@ -894,8 +894,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -722, y: 194}
-  m_SizeDelta: {x: 271.7617, y: 77.61}
+  m_AnchoredPosition: {x: -622.49, y: 201.39}
+  m_SizeDelta: {x: 467.1662, y: 77.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &616564121
 MonoBehaviour:
@@ -930,7 +930,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Coins: '
+  m_Text: 'Coins This Run: '
 --- !u!222 &616564122
 CanvasRenderer:
   m_ObjectHideFlags: 0
