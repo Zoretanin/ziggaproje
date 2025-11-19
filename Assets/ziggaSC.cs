@@ -12,6 +12,9 @@ public class ziggaSC : MonoBehaviour
     public float deadZoneY = -7;
     private int coinCounter = 0;
     public Text counterText;
+    public int playerNumber;
+    public KeyCode jumpKey;
+
     
     void Start()
     {
@@ -21,14 +24,15 @@ public class ziggaSC : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) == true && isAlive == true)
-        {
+        if (Input.GetKeyDown(jumpKey) == true && isAlive == true)
+        {          
             myRigidbody.linearVelocity = Vector2.up * jumpForce;
         }
-    
+        
+       
         if (transform.position.y < deadZoneY && isAlive == true)
         {
-            logic.gameOver();
+            logic.OnPlayerKill(playerNumber);
             isAlive = false;
         }
 
@@ -39,8 +43,8 @@ public class ziggaSC : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("pipe"))
         {
-           logic.gameOver();
-           isAlive = false;
+            logic.OnPlayerKill(playerNumber);
+            isAlive = false;
         }
    
     }
